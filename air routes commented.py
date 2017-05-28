@@ -149,8 +149,8 @@ Start of main code
 """
 
 print('Loading data.')
-#airports = pd.read_csv('airports.dat', names=['AirportID', 'Name', 'City', 'Country', 'IATA', 'ICAO', 'Latitude', 'Longitude', 'Altitude', 'Timezone', 'DST', 'Tz', 'Type', 'Source', 'Size'], na_values=['\N','\\N'])
-airports = pd.read_csv('airports2.dat')
+airports = pd.read_csv('airports.dat', names=['AirportID', 'Name', 'City', 'Country', 'IATA', 'ICAO', 'Latitude', 'Longitude', 'Altitude', 'Timezone', 'DST', 'Tz', 'Type', 'Source', 'Size'], na_values=['\N','\\N'])
+#airports = pd.read_csv('airports2.dat')
 routes = pd.read_csv('routes.dat', names=['Airline', 'AirlineID', 'SourceAirport', 'SourceAirportID', 'DestinationAirport', 'DestinationAirportID', 'Codeshare', 'Stops', 'Equipment'], na_values=['\N','\\N'])
 
 
@@ -166,8 +166,8 @@ routes.DestinationAirportID = routes.DestinationAirportID.astype("int32")
 
 
 # comment this out if loading airports2.dat
-#print('Calculating airport sizes.')
-#createSizeColumn()
+print('Calculating airport sizes.')
+createSizeColumn()
 
 # uncomment this to save a new csv with the Size column
 #airports.to_csv('airports2.dat',index=False)
