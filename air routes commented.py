@@ -36,7 +36,7 @@ def makemap(title):  # plot all the airports dots
     fig = plt.figure(figsize=(48,24))
     
     ax = fig.add_subplot(111)
-    ax.set_title(title)
+    ax.set_title(title.decode('utf8'))
     ax.grid(b=False)
     for spine in ['left','right','top','bottom']:
         ax.spines[spine].set_color('k')
